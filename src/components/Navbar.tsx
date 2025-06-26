@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { Menu, X, Home } from 'lucide-react';
+import '../styles/Navbar.css';
 
 const Navbar: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -36,8 +37,8 @@ const Navbar: React.FC = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
           <Link to="/" className="flex items-center space-x-2">
-            <Home className="h-8 w-8 text-[#D4AF37]" />
-            <span className="text-xl font-bold text-[#D4AF37]">LuxeInteriors</span>
+            <img src="/assets/homeSphere.jpg" className='logo' alt="home sphere" />
+            <span className="text-xl font-bold text-[#D4AF37]">HOME SPHERE</span>
           </Link>
 
           {/* Desktop Menu */}
