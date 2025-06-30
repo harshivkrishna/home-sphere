@@ -47,7 +47,7 @@ const Home: React.FC = () => {
       <HeroSection />
 
       {/* About Section */}
-      <section className="py-20 bg-[#1C1C1C]">
+      <section className="py-20 bg-[#1C1C1C] overflow-x-hidden">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <motion.div

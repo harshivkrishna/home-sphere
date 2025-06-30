@@ -73,7 +73,7 @@ const Services: React.FC = () => {
   ];
 
   return (
-    <div className="pt-16">
+    <div className="pt-16 overflow-x-hidden">
       {/* Hero Section */}
       <section className="py-20 bg-[#1C1C1C]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -146,7 +146,7 @@ const Services: React.FC = () => {
       </section>
 
       {/* Why Choose Us Section */}
-      <section className="py-20 bg-[#1C1C1C]">
+      <section className="py-20 bg-[#1C1C1C] ">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <motion.div
