@@ -156,7 +156,7 @@ const Services: React.FC = () => {
               viewport={{ once: true }}
             >
               <h2 className="text-4xl md:text-5xl font-bold mb-6">
-                Why Choose <span className="text-[#D4AF37]">LuxeInteriors?</span>
+                Why Choose <span className="text-[#D4AF37]">Home Sphere?</span>
               </h2>
               <p className="text-xl text-gray-300 mb-8 leading-relaxed">
                 With over 15 years of experience and hundreds of successful projects, we've established 

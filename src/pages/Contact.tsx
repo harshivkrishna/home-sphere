@@ -37,7 +37,7 @@ const Contact: React.FC = () => {
     {
       icon: Mail,
       title: "Email",
-      details: "info@luxeinteriors.com",
+      details: "info@homesphere.com",
       description: "Send us your design inquiries"
     },
     {
@@ -313,7 +313,7 @@ const Contact: React.FC = () => {
                     },
                     {
                       question: "Want to schedule a consultation?",
-                      answer: "Email us at info@luxeinteriors.com or use the form to request a free consultation."
+                      answer: "Email us at info@homesphere.com or use the form to request a free consultation."
                     },
                     {
                       question: "Looking for inspiration?",

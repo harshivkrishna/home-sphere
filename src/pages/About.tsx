@@ -61,7 +61,7 @@ const About: React.FC = () => {
             transition={{ duration: 0.8 }}
           >
             <h1 className="text-5xl md:text-6xl font-bold mb-6">
-              About <span className="text-[#D4AF37]">LuxeInteriors</span>
+              About <span className="text-[#D4AF37]">Home Sphere</span>
             </h1>
             <p className="text-xl text-gray-300 max-w-3xl mx-auto leading-relaxed">
               Founded on the principle that exceptional design has the power to transform lives, 
