@@ -350,7 +350,7 @@ const Contact: React.FC = () => {
               For urgent project matters or emergency consultations, call us directly.
             </p>
             <motion.a
-              href="tel:5551234567"
+              href="tel:9345921521"
               className="bg-black text-[#D4AF37] px-8 py-4 rounded-lg font-bold text-lg hover:bg-gray-900 transition-colors duration-300 inline-block"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
