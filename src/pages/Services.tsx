@@ -255,7 +255,7 @@ const Services: React.FC = () => {
                 Why Choose <span className="text-[#D4AF37]">Home Sphere?</span>
               </h2>
               <p className="text-xl text-gray-300 mb-8 leading-relaxed">
-                With over 15 years of experience and hundreds of successful projects, we've established 
+                With over 7 years of experience and hundreds of successful projects, we've established 
                 ourselves as leaders in luxury interior design. Here's what sets us apart:
               </p>
               
@@ -307,7 +307,7 @@ const Services: React.FC = () => {
                 className="rounded-2xl shadow-2xl w-full"
               />
               <div className="absolute -bottom-6 -right-6 bg-black p-6 rounded-xl border-2 border-[#D4AF37]">
-                <div className="text-2xl font-bold text-[#D4AF37] mb-1">15+</div>
+                <div className="text-2xl font-bold text-[#D4AF37] mb-1">7+</div>
                 <div className="text-sm text-gray-300">Years of Excellence</div>
               </div>
             </motion.div>
