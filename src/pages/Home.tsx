@@ -5,111 +5,185 @@ import ServiceCard from '../components/ServiceCard';
 import TestimonialSlider from '../components/TestimonialSlider';
 import PricingSection from '../components/PricingSection';
 import BlogSection from '../components/BlogSection';
-import { Palette, Home as HomeIcon, Wrench, Sofa, ArrowRight, Award, Users, CheckCircle } from 'lucide-react';
+import {
+  Paintbrush,
+  Wallpaper,
+  Blinds,
+  Layers,
+  LayoutPanelTop,
+  Palette,
+  Home as HomeIcon,
+  Wrench,
+  Sofa,
+  Lightbulb,
+  Ruler,
+  Building2,
+  BedDouble,
+  ArrowRight,
+  CheckCircle,
+} from "lucide-react"; // Adjust icon imports as needed
+
+const services = [
+  {
+    icon: Paintbrush,
+    title: "Painting",
+    description:
+      "High-quality painting services with professional finish and lasting durability. We help you choose the perfect shades and textures to suit your ambiance.",
+    features: [
+      "Interior & Exterior Painting",
+      "Texture & Stencil Work",
+      "Eco-friendly Paints",
+      "Surface Preparation",
+      "Premium Finish",
+      "Custom Color Matching",
+    ],
+    categories: ["residential", "commercial", "living", "bedroom"],
+  },
+  {
+    icon: Wallpaper,
+    title: "Wallpaper",
+    description:
+      "Add style and personality to your walls with stunning wallpaper designs that reflect your taste, from subtle textures to bold patterns.",
+    features: [
+      "3D & Textured Wallpapers",
+      "Easy Maintenance Options",
+      "Peel & Stick Variants",
+      "Moisture Resistant Choices",
+      "Wall Preparation",
+      "Durable Finish",
+    ],
+    categories: ["residential", "living", "bedroom", "accent"],
+  },
+  {
+    icon: Blinds,
+    title: "Curtains & Blinds",
+    description:
+      "Elegant window solutions including custom curtains and blinds that offer privacy, light control, and a touch of luxury.",
+    features: [
+      "Custom Curtain Stitching",
+      "Sheer & Blackout Options",
+      "Motorized Blinds",
+      "Roman & Roller Blinds",
+      "Fabric & Material Selection",
+      "Installation & Support",
+    ],
+    categories: ["residential", "living", "bedroom", "commercial"],
+  },
+  {
+    icon: Layers,
+    title: "Flooring",
+    description:
+      "Durable and stylish flooring solutions including wooden, vinyl, and artificial grass, tailored to your space and budget.",
+    features: [
+      "Wooden Flooring",
+      "Vinyl Planks",
+      "Artificial Grass",
+      "Anti-Slip Options",
+      "Acoustic Insulation",
+      "Moisture Resistance",
+    ],
+    categories: ["living", "bedroom", "commercial", "kitchen"],
+  },
+  {
+    icon: LayoutPanelTop,
+    title: "False Ceiling",
+    description:
+      "Stylish and functional false ceiling designs that enhance lighting, acoustics, and aesthetics of your space.",
+    features: [
+      "POP & Gypsum Designs",
+      "Cove Lighting Integration",
+      "Soundproofing Solutions",
+      "Thermal Insulation",
+      "Custom Shapes & Patterns",
+      "Paint & Texture Finish",
+    ],
+    categories: ["residential", "living", "bedroom", "commercial"],
+  },
+];
+
+
+const stats = [
+  { number: "500", label: "Projects Delivered" },
+  { number: "7+", label: "Years of Experience" },
+  { number: "30 Days", label: "Avg. Project Completion" },
+  { number: "100%", label: "Quality Assurance" }
+];
+
 
 const Home: React.FC = () => {
-  const services = [
-    {
-      icon: Palette,
-      title: "Interior Design",
-      description: "Complete interior design solutions tailored to your unique style and preferences.",
-      features: ["Space Planning", "Color Consultation", "Furniture Selection", "Custom Layouts"]
-    },
-    {
-      icon: HomeIcon,
-      title: "Modular Kitchen",
-      description: "Modern, functional kitchens designed to maximize space and enhance your culinary experience.",
-      features: ["Custom Cabinets", "Smart Storage", "Premium Appliances", "Ergonomic Design"]
-    },
-    {
-      icon: Wrench,
-      title: "Renovations",
-      description: "Complete home renovations that transform your space while preserving its character.",
-      features: ["Full Remodeling", "Structural Changes", "Modern Updates", "Quality Materials"]
-    },
-    {
-      icon: Sofa,
-      title: "Custom Furniture",
-      description: "Bespoke furniture pieces crafted to perfectly fit your space and lifestyle needs.",
-      features: ["Made-to-Order", "Premium Materials", "Unique Designs", "Perfect Fit"]
-    }
-  ];
-
-  const stats = [
-    { number: "500+", label: "Projects Completed" },
-    { number: "15+", label: "Years Experience" },
-    { number: "98%", label: "Client Satisfaction" },
-    { number: "50+", label: "Design Awards" }
-  ];
-
   return (
     <div>
       <HeroSection />
-
-      {/* About Section */}
+      
       <section className="py-20 bg-[#1C1C1C] overflow-x-hidden">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+  <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+      <motion.div
+        initial={{ opacity: 0, x: -50 }}
+        whileInView={{ opacity: 1, x: 0 }}
+        transition={{ duration: 0.8 }}
+        viewport={{ once: true }}
+      >
+        <h2 className="text-4xl md:text-5xl font-bold mb-6">
+          Creating <span className="text-[#D4AF37]">Exceptional</span> Spaces
+        </h2>
+        <p className="text-xl text-gray-300 mb-8 leading-relaxed">
+          With over 7+ years of experience in luxury interior design, we specialize in creating 
+          spaces that perfectly balance aesthetics, functionality, and your personal style. 
+          Every project is a unique journey of transformation.
+        </p>
+        <div className="space-y-4 mb-8">
+          {[
+            "Award-winning design team",
+            "Personalized design approach",
+            "Premium quality materials",
+            "Timely project completion"
+          ].map((item, index) => (
             <motion.div
-              initial={{ opacity: 0, x: -50 }}
+              key={index}
+              className="flex items-center space-x-3"
+              initial={{ opacity: 0, x: -20 }}
               whileInView={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.8 }}
+              transition={{ delay: index * 0.1, duration: 0.5 }}
               viewport={{ once: true }}
             >
-              <h2 className="text-4xl md:text-5xl font-bold mb-6">
-                Creating <span className="text-[#D4AF37]">Exceptional</span> Spaces
-              </h2>
-              <p className="text-xl text-gray-300 mb-8 leading-relaxed">
-                With over 15 years of experience in luxury interior design, we specialize in creating 
-                spaces that perfectly balance aesthetics, functionality, and your personal style. 
-                Every project is a unique journey of transformation.
-              </p>
-              <div className="space-y-4 mb-8">
-                {["Award-winning design team", "Personalized design approach", "Premium quality materials", "Timely project completion"].map((item, index) => (
-                  <motion.div
-                    key={index}
-                    className="flex items-center space-x-3"
-                    initial={{ opacity: 0, x: -20 }}
-                    whileInView={{ opacity: 1, x: 0 }}
-                    transition={{ delay: index * 0.1, duration: 0.5 }}
-                    viewport={{ once: true }}
-                  >
-                    <CheckCircle className="h-6 w-6 text-[#D4AF37]" />
-                    <span className="text-gray-300">{item}</span>
-                  </motion.div>
-                ))}
-              </div>
-              <motion.button
-                className="bg-[#D4AF37] text-black px-8 py-4 rounded-lg font-semibold text-lg flex items-center space-x-2 hover:bg-[#B8941F] transition-colors duration-300"
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-              >
-                <span>Learn More About Us</span>
-                <ArrowRight className="h-5 w-5" />
-              </motion.button>
+              <CheckCircle className="h-6 w-6 text-[#D4AF37]" />
+              <span className="text-gray-300">{item}</span>
             </motion.div>
-
-            <motion.div
-              className="relative"
-              initial={{ opacity: 0, x: 50 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.8 }}
-              viewport={{ once: true }}
-            >
-              <img
-                src="https://images.pexels.com/photos/1571468/pexels-photo-1571468.jpeg?auto=compress&cs=tinysrgb&w=800&h=600&fit=crop"
-                alt="Luxury Interior"
-                className="rounded-2xl shadow-2xl"
-              />
-              <div className="absolute -bottom-6 -left-6 bg-[#D4AF37] text-black p-6 rounded-xl">
-                <Award className="h-8 w-8 mb-2" />
-                <div className="text-sm font-semibold">Award Winning</div>
-                <div className="text-xs">Design Excellence</div>
-              </div>
-            </motion.div>
-          </div>
+          ))}
         </div>
-      </section>
+        <motion.button
+          className="bg-[#D4AF37] text-black px-8 py-4 rounded-lg font-semibold text-lg flex items-center space-x-2 hover:bg-[#B8941F] transition-colors duration-300"
+          whileHover={{ scale: 1.05 }}
+          whileTap={{ scale: 0.95 }}
+        >
+          <span>Learn More About Us</span>
+          <ArrowRight className="h-5 w-5" />
+        </motion.button>
+      </motion.div>
+
+      <motion.div
+        className="relative"
+        initial={{ opacity: 0, x: 50 }}
+        whileInView={{ opacity: 1, x: 0 }}
+        transition={{ duration: 0.8 }}
+        viewport={{ once: true }}
+      >
+        <img
+          src="https://images.pexels.com/photos/1571468/pexels-photo-1571468.jpeg?auto=compress&cs=tinysrgb&w=800&h=600&fit=crop"
+          alt="Luxury Interior"
+          className="rounded-2xl shadow-2xl"
+        />
+        <div className="absolute -bottom-6 -left-6 bg-[#D4AF37] text-black p-6 rounded-xl">
+          <Wrench className="h-8 w-8 mb-2" />
+          <div className="text-sm font-semibold">Flat 10 Year</div>
+          <div className="text-xs">Warranty Coverage</div>
+        </div>
+      </motion.div>
+    </div>
+  </div>
+</section>
+
 
       {/* Stats Section */}
       <section className="py-20 bg-black">

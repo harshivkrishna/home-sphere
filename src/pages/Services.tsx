@@ -2,46 +2,142 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import ServiceCard from '../components/ServiceCard';
 import FAQSection from '../components/FAQSection';
-import { Palette, Home, Wrench, Sofa, Lightbulb, Ruler, ArrowRight } from 'lucide-react';
+import { Palette, Home, Wrench, Sofa, Lightbulb, Ruler, ArrowRight, Building2, BedDouble } from 'lucide-react';
 
 const Services: React.FC = () => {
   const services = [
     {
       icon: Palette,
       title: "Interior Design",
-      description: "Complete interior design solutions that reflect your personal style and enhance your lifestyle. From concept to completion, we handle every detail.",
-      features: ["Space Planning & Layout", "Color Consultation", "Furniture Selection", "Lighting Design", "Custom Window Treatments", "Art & Accessory Curation"]
+      description:
+        "Complete interior design solutions that reflect your personal style and enhance your lifestyle. From concept to completion, we handle every detail.",
+      features: [
+        "Space Planning & Layout",
+        "Color Consultation",
+        "Furniture Selection",
+        "Lighting Design",
+        "Custom Window Treatments",
+        "Art & Accessory Curation",
+      ],
+      categories: ["residential", "commercial", "living", "bedroom"],
     },
     {
       icon: Home,
       title: "Modular Kitchen",
-      description: "Modern, functional kitchens designed to maximize space and efficiency while maintaining aesthetic appeal. Every kitchen is tailored to your cooking habits.",
-      features: ["Custom Cabinet Design", "Smart Storage Solutions", "Premium Appliance Integration", "Ergonomic Layouts", "Countertop Selection", "Backsplash Design"]
+      description:
+        "Modern, functional kitchens designed to maximize space and efficiency while maintaining aesthetic appeal. Every kitchen is tailored to your cooking habits.",
+      features: [
+        "Custom Cabinet Design",
+        "Smart Storage Solutions",
+        "Premium Appliance Integration",
+        "Ergonomic Layouts",
+        "Countertop Selection",
+        "Backsplash Design",
+      ],
+      categories: ["kitchen", "residential", "commercial"],
     },
     {
       icon: Wrench,
       title: "Complete Renovations",
-      description: "Full-scale renovations that transform your entire space. We manage every aspect from demolition to final touches with minimal disruption.",
-      features: ["Structural Modifications", "Electrical & Plumbing Updates", "Flooring Installation", "Wall Treatments", "Ceiling Design", "Complete Makeovers"]
+      description:
+        "Full-scale renovations that transform your entire space. We manage every aspect from demolition to final touches with minimal disruption.",
+      features: [
+        "Structural Modifications",
+        "Electrical & Plumbing Updates",
+        "Flooring Installation",
+        "Wall Treatments",
+        "Ceiling Design",
+        "Complete Makeovers",
+      ],
+      categories: ["renovation", "residential", "commercial"],
     },
     {
       icon: Sofa,
       title: "Custom Furniture",
-      description: "Bespoke furniture pieces designed and crafted specifically for your space. Each piece is unique and perfectly suited to your needs.",
-      features: ["Made-to-Measure Pieces", "Premium Material Selection", "Unique Design Concepts", "Expert Craftsmanship", "Perfect Space Utilization", "Quality Guarantee"]
+      description:
+        "Bespoke furniture pieces designed and crafted specifically for your space. Each piece is unique and perfectly suited to your needs.",
+      features: [
+        "Made-to-Measure Pieces",
+        "Premium Material Selection",
+        "Unique Design Concepts",
+        "Expert Craftsmanship",
+        "Perfect Space Utilization",
+        "Quality Guarantee",
+      ],
+      categories: ["living", "bedroom", "residential"],
     },
     {
       icon: Lightbulb,
       title: "Lighting Design",
-      description: "Comprehensive lighting solutions that create ambiance, highlight features, and improve functionality throughout your space.",
-      features: ["Ambient Lighting", "Task Lighting", "Accent Lighting", "Smart Controls", "Energy Efficiency", "Mood Enhancement"]
+      description:
+        "Comprehensive lighting solutions that create ambiance, highlight features, and improve functionality throughout your space.",
+      features: [
+        "Ambient Lighting",
+        "Task Lighting",
+        "Accent Lighting",
+        "Smart Controls",
+        "Energy Efficiency",
+        "Mood Enhancement",
+      ],
+      categories: [
+        "living",
+        "bedroom",
+        "kitchen",
+        "residential",
+        "commercial",
+      ],
     },
     {
       icon: Ruler,
       title: "Space Planning",
-      description: "Optimize your space with expert planning that maximizes functionality while maintaining aesthetic appeal and flow.",
-      features: ["Traffic Flow Analysis", "Furniture Arrangement", "Storage Optimization", "Multi-functional Spaces", "Scale & Proportion", "Room Functionality"]
-    }
+      description:
+        "Optimize your space with expert planning that maximizes functionality while maintaining aesthetic appeal and flow.",
+      features: [
+        "Traffic Flow Analysis",
+        "Furniture Arrangement",
+        "Storage Optimization",
+        "Multi-functional Spaces",
+        "Scale & Proportion",
+        "Room Functionality",
+      ],
+      categories: [
+        "living",
+        "bedroom",
+        "kitchen",
+        "residential",
+        "commercial",
+      ],
+    },
+    {
+      icon: Building2,
+      title: "Commercial Design",
+      description:
+        "Tailored commercial interiors that enhance brand identity, improve workflow, and create inviting environments for customers and employees alike.",
+      features: [
+        "Brand-Aligned Aesthetics",
+        "Workplace Ergonomics",
+        "Retail Space Optimization",
+        "Lobby & Reception Design",
+        "Conference Room Solutions",
+        "Facility Compliance",
+      ],
+      categories: ["commercial"],
+    },
+    {
+      icon: BedDouble,
+      title: "Bedroom Makeovers",
+      description:
+        "Tranquil bedroom designs that balance comfort and style, ensuring restful nights and refreshing mornings.",
+      features: [
+        "Custom Headboards",
+        "Wardrobe Solutions",
+        "Soothing Color Palettes",
+        "Ambient Lighting",
+        "Ergonomic Layouts",
+        "Soft Furnishing Selection",
+      ],
+      categories: ["bedroom", "residential"],
+    },
   ];
 
   const process = [

@@ -65,7 +65,7 @@ const About: React.FC = () => {
             </h1>
             <p className="text-xl text-gray-300 max-w-3xl mx-auto leading-relaxed">
               Founded on the principle that exceptional design has the power to transform lives, 
-              we've been creating beautiful, functional spaces for over 15 years.
+              we've been creating beautiful, functional spaces for over 7 years.
             </p>
           </motion.div>
 
@@ -105,8 +105,8 @@ const About: React.FC = () => {
                   <div className="text-gray-300">Projects Completed</div>
                 </div>
                 <div className="text-center">
-                  <div className="text-3xl font-bold text-[#D4AF37] mb-2">50+</div>
-                  <div className="text-gray-300">Awards Won</div>
+                  <div className="text-3xl font-bold text-[#D4AF37] mb-2">30 Days</div>
+                  <div className="text-gray-300">Project Completed</div>
                 </div>
               </div>
             </motion.div>

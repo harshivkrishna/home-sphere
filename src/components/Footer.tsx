@@ -1,13 +1,14 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Home, Mail, Phone, MapPin, Facebook, Instagram, Twitter } from 'lucide-react';
+import { Home, Mail, Phone, MapPin, Facebook, Instagram } from 'lucide-react';
+import { FaWhatsapp } from 'react-icons/fa';   // ← add
 
 const Footer: React.FC = () => {
-  const date = new Date;
+  const date = new Date();
   const socialLinks = [
     { icon: Facebook, href: '#', label: 'Facebook' },
     { icon: Instagram, href: '#', label: 'Instagram' },
-    { icon: Twitter, href: '#', label: 'Twitter' },
+    { icon: FaWhatsapp, href: '#', label: 'WhatsApp' }, // ← add
   ];
 
   return (
@@ -17,18 +18,25 @@ const Footer: React.FC = () => {
           {/* Logo and Description */}
           <div className="col-span-1 md:col-span-2">
             <div className="flex items-center space-x-2 mb-4">
-              <img className="h-8 w-8 rounded-full text-[#D4AF37]" src='/assets/homeSphere.jpg' />
+              <img
+                className="h-8 w-8 rounded-full text-[#D4AF37]"
+                src="/assets/homeSphere.jpg"
+                alt="Home Sphere"
+              />
               <span className="text-xl font-bold text-[#D4AF37]">Home Sphere</span>
             </div>
+
             <p className="text-gray-300 mb-6 max-w-md">
-              Creating exceptional interior spaces that reflect your unique style and enhance your lifestyle. 
-              From concept to completion, we bring your vision to life.
+              Creating exceptional interior spaces that reflect your unique style and enhance
+              your lifestyle. From concept to completion, we bring your vision to life.
             </p>
+
             <div className="flex space-x-4">
               {socialLinks.map(({ icon: Icon, href, label }) => (
                 <motion.a
                   key={label}
                   href={href}
+                  aria-label={label}
                   className="text-gray-400 hover:text-[#D4AF37] transition-colors duration-200"
                   whileHover={{ scale: 1.2 }}
                   whileTap={{ scale: 0.9 }}
@@ -66,11 +74,11 @@ const Footer: React.FC = () => {
               </div>
               <div className="flex items-center space-x-3">
                 <Phone className="h-5 w-5 text-[#D4AF37]" />
-                <span className="text-gray-300">(555) 123-4567</span>
+                <span className="text-gray-300">9345921521</span>
               </div>
               <div className="flex items-center space-x-3">
                 <Mail className="h-5 w-5 text-[#D4AF37]" />
-                <span className="text-gray-300">info@homesphere.com</span>
+                <span className="text-gray-300">contact@homesphereinterior.com</span>
               </div>
             </div>
           </div>
@@ -78,7 +86,8 @@ const Footer: React.FC = () => {
 
         <div className="border-t border-gray-700 mt-8 pt-8 text-center">
           <p className="text-gray-400">
-            &copy; {date.getFullYear()} Home Sphere. All rights reserved. Crafted with passion for exceptional design.
+            &copy; {date.getFullYear()} Home Sphere. All rights reserved. Crafted with passion for
+            exceptional design.
           </p>
         </div>
       </div>

@@ -91,7 +91,7 @@ const ProcessTimeline: React.FC = () => {
                       </motion.div>
                       <div>
                         <h3 className="text-xl font-bold text-[#D4AF37]">{step.title}</h3>
-                        <span className="text-sm text-gray-400">{step.duration}</span>
+                        {/* <span className="text-sm text-gray-400">{step.duration}</span> */}
                       </div>
                     </div>
                     <p className="text-gray-300 leading-relaxed">{step.description}</p>

@@ -13,7 +13,7 @@ interface ServiceCardProps {
 const ServiceCard: React.FC<ServiceCardProps> = ({ icon: Icon, title, description, features, index }) => {
   return (
     <motion.div
-      className="bg-[#1C1C1C] p-8 rounded-lg hover:bg-[#2A2A2A] transition-all duration-300 group"
+      className="bg-[#1C1C1C] p-8 rounded-lg hover:bg-[#2A2A2A] transition-all duration-300 group flex flex-col"
       initial={{ opacity: 0, y: 50 }}
       whileInView={{ opacity: 1, y: 0 }}
       transition={{ delay: index * 0.2, duration: 0.6 }}
@@ -30,7 +30,7 @@ const ServiceCard: React.FC<ServiceCardProps> = ({ icon: Icon, title, descriptio
       <h3 className="text-2xl font-bold mb-4 text-[#D4AF37]">{title}</h3>
       <p className="text-gray-300 mb-6 leading-relaxed">{description}</p>
 
-      <ul className="space-y-2">
+      <ul className="space-y-2 mb-6">
         {features.map((feature, featureIndex) => (
           <motion.li
             key={featureIndex}
@@ -46,12 +46,14 @@ const ServiceCard: React.FC<ServiceCardProps> = ({ icon: Icon, title, descriptio
         ))}
       </ul>
 
-      <motion.button
-        className="mt-6 text-[#D4AF37] font-semibold hover:text-white transition-colors duration-300"
-        whileHover={{ x: 5 }}
-      >
-        Learn More →
-      </motion.button>
+      <div className="mt-auto pt-4">
+        <motion.button
+          className="text-[#D4AF37] font-semibold hover:text-white transition-colors duration-300"
+          whileHover={{ x: 5 }}
+        >
+          Learn More →
+        </motion.button>
+      </div>
     </motion.div>
   );
 };

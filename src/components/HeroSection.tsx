@@ -28,10 +28,7 @@ const HeroSection: React.FC = () => {
             animate={{ opacity: 1, scale: 1 }}
             transition={{ delay: 0.2, duration: 0.6 }}
           >
-            {[...Array(5)].map((_, i) => (
-              <Star key={i} className="h-4 w-4 sm:h-5 sm:w-5 text-[#D4AF37] fill-current" />
-            ))}
-            <span className="text-[#D4AF37] ml-1 sm:ml-2 text-sm sm:text-base">Award-Winning Design</span>
+            
           </motion.div>
 
           <motion.h1

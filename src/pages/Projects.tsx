@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { X, ExternalLink, Calendar, MapPin } from 'lucide-react';
 import PortfolioShowcase from '../components/PortfolioShowcase';
+import ServicesGrid from '../components/ServicesGrid';
 
 interface Project {
   id: number;
@@ -179,6 +180,8 @@ const Projects: React.FC = () => {
       </section>
 
       <PortfolioShowcase />
+
+      <ServicesGrid/>
 
       {/* Project Modal */}
       <AnimatePresence>
