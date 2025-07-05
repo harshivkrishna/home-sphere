@@ -125,6 +125,8 @@ const FAQSection: React.FC = () => {
             className="border-2 border-[#D4AF37] text-[#D4AF37] px-8 py-4 rounded-lg font-semibold text-lg hover:bg-[#D4AF37] hover:text-black transition-all duration-300"
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
+            onClick={()=>{window.location.href='/contact'}}
+
           >
             Contact Us
           </motion.button>

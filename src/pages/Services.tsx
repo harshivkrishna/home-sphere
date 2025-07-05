@@ -288,6 +288,7 @@ const Services: React.FC = () => {
                 className="mt-8 bg-[#D4AF37] text-black px-8 py-4 rounded-lg font-semibold text-lg flex items-center space-x-2 hover:bg-[#B8941F] transition-colors duration-300"
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
+                onClick={()=>{window.location.href='/contact'}}
               >
                 <span>Get Your Free Consultation</span>
                 <ArrowRight className="h-5 w-5" />
@@ -337,6 +338,8 @@ const Services: React.FC = () => {
               className="bg-[#D4AF37] text-black px-12 py-6 rounded-lg font-bold text-xl hover:bg-[#B8941F] transition-colors duration-300"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
+              onClick={()=>{window.location.href='/contact'}}
+
             >
               Schedule Consultation
             </motion.button>

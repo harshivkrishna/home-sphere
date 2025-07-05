@@ -31,25 +31,25 @@ const Contact: React.FC = () => {
     {
       icon: Phone,
       title: "Phone",
-      details: "(555) 123-4567",
+      details: "9345921521",
       description: "Call us for immediate assistance"
     },
     {
       icon: Mail,
       title: "Email",
-      details: "info@homesphere.com",
+      details: "contact@homesphereinterior.com",
       description: "Send us your design inquiries"
     },
     {
       icon: MapPin,
       title: "Address",
-      details: "123 Design Street, Suite 100",
+      details: "No.30/39A ,First Street,  New bangaru colony, west KK.Nagar Chennai - 600078",
       description: "Visit our showroom by appointment"
     },
     {
       icon: Clock,
       title: "Hours",
-      details: "Mon - Fri: 9AM - 6PM",
+      details: "Mon - Sun: 9AM - 7PM",
       description: "Saturday consultations available"
     }
   ];
@@ -286,7 +286,7 @@ const Contact: React.FC = () => {
               <div className="bg-[#1C1C1C] p-6 rounded-xl">
                 <h3 className="text-2xl font-bold mb-4 text-[#D4AF37]">Visit Our Showroom</h3>
                 <div className="aspect-video bg-gray-800 rounded-lg mb-4 flex items-center justify-center">
-                  <MapPin className="h-12 w-12 text-[#D4AF37]" />
+                  <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3886.876119669667!2d80.1915619!3d13.0435564!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a5267afb4adc921%3A0xc5b11509429a2c61!2s32%2F40%2C%20New%20Bangaru%20Colony%2C%20KK%20Nagar%20West%2C%20K.%20K.%20Nagar%2C%20Chennai%2C%20Tamil%20Nadu%20600078!5e0!3m2!1sen!2sin!4v1751707972583!5m2!1sen!2sin" width="600" height="450"  loading="lazy" ></iframe>
                 </div>
                 <p className="text-gray-300 mb-4">
                   Located in the heart of the design district, our showroom features the latest in 
@@ -309,11 +309,11 @@ const Contact: React.FC = () => {
                   {[
                     {
                       question: "Need immediate assistance?",
-                      answer: "Call us directly at (555) 123-4567 for urgent project matters or emergency consultations."
+                      answer: "Call us directly at 9345921521 for urgent project matters or emergency consultations."
                     },
                     {
                       question: "Want to schedule a consultation?",
-                      answer: "Email us at info@homesphere.com or use the form to request a free consultation."
+                      answer: "Email us at contact@homesphereinterior.com or use the form to request a free consultation."
                     },
                     {
                       question: "Looking for inspiration?",
@@ -355,7 +355,7 @@ const Contact: React.FC = () => {
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
             >
-              Call Now: (555) 123-4567
+              Call Now: 93459 21521
             </motion.a>
           </motion.div>
         </div>

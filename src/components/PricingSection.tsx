@@ -128,6 +128,7 @@ const PricingSection: React.FC = () => {
                 }`}
                 whileHover={{ scale: 1.02 }}
                 whileTap={{ scale: 0.98 }}
+                onClick={()=>{window.location.href='/contact'}}
               >
                 Get Started
               </motion.button>

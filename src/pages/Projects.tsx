@@ -297,6 +297,8 @@ const Projects: React.FC = () => {
               className="bg-[#D4AF37] text-black px-12 py-6 rounded-lg font-bold text-xl hover:bg-[#B8941F] transition-colors duration-300"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
+              onClick={()=>{window.location.href='/contact'}}
+
             >
               Start Your Project
             </motion.button>

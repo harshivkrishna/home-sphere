@@ -118,6 +118,14 @@ const Home: React.FC = () => {
     return !sessionStorage.getItem(POPUP_KEY);
   });
 
+  const openQuote = () => setShowPopup(true);
+
+  /* close + remember */
+  const closeQuote = () => {
+    setShowPopup(false);
+    sessionStorage.setItem(POPUP_KEY, 'true'); // keep “seen” flag
+  };
+
   /*  show automatically after 5 s (optional)  */
   useEffect(() => {
     if (!showPopup) return;
@@ -133,7 +141,7 @@ const Home: React.FC = () => {
   return (
     <div>
       <Popup open={showPopup} onClose={handleClose}/>
-      <HeroSection />
+      <HeroSection onStartProject={openQuote} />
       
       <section className="py-20 bg-[#1C1C1C] overflow-x-hidden">
   <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -176,6 +184,7 @@ const Home: React.FC = () => {
           className="bg-[#D4AF37] text-black px-8 py-4 rounded-lg font-semibold text-lg flex items-center space-x-2 hover:bg-[#B8941F] transition-colors duration-300"
           whileHover={{ scale: 1.05 }}
           whileTap={{ scale: 0.95 }}
+          onClick={()=>{window.location.href='/about'}}
         >
           <span>Learn More About Us</span>
           <ArrowRight className="h-5 w-5" />
@@ -331,6 +340,7 @@ const Home: React.FC = () => {
               className="border-2 border-[#D4AF37] text-[#D4AF37] px-8 py-4 rounded-lg font-semibold text-lg hover:bg-[#D4AF37] hover:text-black transition-all duration-300"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
+              onClick={()=>{window.location.href='/projects'}}
             >
               View All Projects
             </motion.button>
@@ -364,6 +374,8 @@ const Home: React.FC = () => {
               className="bg-[#D4AF37] text-black px-12 py-6 rounded-lg font-bold text-xl hover:bg-[#B8941F] transition-colors duration-300"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
+              onClick={()=>{window.location.href='/contact'}}
+
             >
               Get Started Today
             </motion.button>

@@ -7,7 +7,7 @@ const Footer: React.FC = () => {
   const date = new Date();
   const socialLinks = [
     { icon: Facebook, href: '#', label: 'Facebook' },
-    { icon: Instagram, href: '#', label: 'Instagram' },
+    { icon: Instagram, href: 'https://www.instagram.com/homesphere_interior/profilecard/?igsh=NWlqdzBvdzl4ZTRt', label: 'Instagram' },
     { icon: FaWhatsapp, href: '#', label: 'WhatsApp' }, // ← add
   ];
 
@@ -21,7 +21,7 @@ const Footer: React.FC = () => {
               <img
                 className="h-8 w-8 rounded-full text-[#D4AF37]"
                 src="/assets/homeSphere.jpg"
-                alt="Home Sphere"
+                alt="Home Sphere"
               />
               <span className="text-xl font-bold text-[#D4AF37]">Home Sphere</span>
             </div>
@@ -70,7 +70,7 @@ const Footer: React.FC = () => {
             <div className="space-y-3">
               <div className="flex items-center space-x-3">
                 <MapPin className="h-5 w-5 text-[#D4AF37]" />
-                <span className="text-gray-300">123 Design Street, City, ST 12345</span>
+                <span className="text-gray-300">No.30/39A KK.Nagar Chennai - 600078</span>
               </div>
               <div className="flex items-center space-x-3">
                 <Phone className="h-5 w-5 text-[#D4AF37]" />

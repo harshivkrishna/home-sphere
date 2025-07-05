@@ -2,7 +2,10 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { ArrowRight, Star } from 'lucide-react';
 
-const HeroSection: React.FC = () => {
+interface HeroSectionProps {
+  onStartProject: () => void;
+}
+const HeroSection: React.FC<HeroSectionProps> = ({ onStartProject }) => {
   return (
     <section className="relative h-screen flex items-center justify-center overflow-hidden">
       {/* Background Image */}
@@ -61,12 +64,14 @@ const HeroSection: React.FC = () => {
               className="bg-[#D4AF37] text-black px-6 sm:px-8 py-3 sm:py-4 rounded-lg font-semibold text-base sm:text-lg flex items-center space-x-2 hover:bg-[#B8941F] transition-colors duration-300 w-full sm:w-auto justify-center"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
+              onClick={onStartProject}
             >
               <span>Start Your Project</span>
               <ArrowRight className="h-4 w-4 sm:h-5 sm:w-5" />
             </motion.button>
 
             <motion.button
+            onClick={() => (window.location.href = '/project')}
               className="border-2 border-[#D4AF37] text-[#D4AF37] px-6 sm:px-8 py-3 sm:py-4 rounded-lg font-semibold text-base sm:text-lg hover:bg-[#D4AF37] hover:text-black transition-all duration-300 w-full sm:w-auto justify-center"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
