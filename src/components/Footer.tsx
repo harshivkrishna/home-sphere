@@ -8,7 +8,7 @@ const Footer: React.FC = () => {
   const socialLinks = [
     { icon: Facebook, href: '#', label: 'Facebook' },
     { icon: Instagram, href: 'https://www.instagram.com/homesphere_interior/profilecard/?igsh=NWlqdzBvdzl4ZTRt', label: 'Instagram' },
-    { icon: FaWhatsapp, href: '#', label: 'WhatsApp' }, // ← add
+    { icon: FaWhatsapp, href: 'https://wa.me/message/YHZPUJVJDLFNJ1', label: 'WhatsApp' }, // ← add
   ];
 
   return (

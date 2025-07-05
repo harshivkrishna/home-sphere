@@ -46,14 +46,6 @@ const ServiceCard: React.FC<ServiceCardProps> = ({ icon: Icon, title, descriptio
         ))}
       </ul>
 
-      <div className="mt-auto pt-4">
-        <motion.button
-          className="text-[#D4AF37] font-semibold hover:text-white transition-colors duration-300"
-          whileHover={{ x: 5 }}
-        >
-          Learn More →
-        </motion.button>
-      </div>
     </motion.div>
   );
 };

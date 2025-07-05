@@ -228,7 +228,7 @@ const Home: React.FC = () => {
                 viewport={{ once: true }}
               >
                 <motion.div
-                  className="text-4xl md:text-5xl font-bold text-[#D4AF37] mb-2"
+                  className="text-2xl sm:text-3xl md:text-5xl font-bold text-[#D4AF37] mb-2"
                   initial={{ scale: 0 }}
                   whileInView={{ scale: 1 }}
                   transition={{ delay: index * 0.1 + 0.3, duration: 0.5, type: "spring" }}
