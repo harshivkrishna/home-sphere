@@ -5,7 +5,6 @@ import { Check, Star, ArrowRight } from 'lucide-react';
 interface PricingPlan {
   name: string;
   price: string;
-  period: string;
   description: string;
   features: string[];
   popular?: boolean;
@@ -15,9 +14,8 @@ const PricingSection: React.FC = () => {
   const plans: PricingPlan[] = [
     {
       name: "Essential",
-      price: "$2,500",
-      period: "per room",
-      description: "Perfect for single room makeovers with professional design guidance.",
+      price: "2.5 Lakhs",
+      description: "Perfect for single home makeovers with professional design guidance.",
       features: [
         "Initial consultation",
         "Room layout design",
@@ -29,8 +27,7 @@ const PricingSection: React.FC = () => {
     },
     {
       name: "Premium",
-      price: "$5,000",
-      period: "per room",
+      price: "5 Lakhs",
       description: "Complete room transformation with custom elements and premium finishes.",
       features: [
         "Everything in Essential",
@@ -46,7 +43,6 @@ const PricingSection: React.FC = () => {
     {
       name: "Luxury",
       price: "Custom",
-      period: "quote",
       description: "Full-service luxury design for entire homes with bespoke solutions.",
       features: [
         "Everything in Premium",
@@ -104,7 +100,6 @@ const PricingSection: React.FC = () => {
                 <h3 className="text-2xl font-bold text-[#D4AF37] mb-2">{plan.name}</h3>
                 <div className="mb-4">
                   <span className="text-4xl font-bold text-white">{plan.price}</span>
-                  <span className="text-gray-400 ml-2">{plan.period}</span>
                 </div>
                 <p className="text-gray-300">{plan.description}</p>
               </div>

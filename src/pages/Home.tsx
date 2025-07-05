@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { motion } from 'framer-motion';
 import HeroSection from '../components/HeroSection';
 import ServiceCard from '../components/ServiceCard';
@@ -22,6 +22,7 @@ import {
   ArrowRight,
   CheckCircle,
 } from "lucide-react"; // Adjust icon imports as needed
+import Popup from '../components/Popup';
 
 const services = [
   {
@@ -109,10 +110,29 @@ const stats = [
   { number: "100%", label: "Quality Assurance" }
 ];
 
+const POPUP_KEY = 'homeQuotePopupSeen';
+
 
 const Home: React.FC = () => {
+  const [showPopup, setShowPopup] = useState(() => {
+    return !sessionStorage.getItem(POPUP_KEY);
+  });
+
+  /*  show automatically after 5 s (optional)  */
+  useEffect(() => {
+    if (!showPopup) return;
+    const t = setTimeout(() => setShowPopup(true), 5000);
+    return () => clearTimeout(t);
+  }, [showPopup]);
+
+  const handleClose = () => {
+    setShowPopup(false);
+    sessionStorage.setItem(POPUP_KEY, 'true');
+  };
+
   return (
     <div>
+      <Popup open={showPopup} onClose={handleClose}/>
       <HeroSection />
       
       <section className="py-20 bg-[#1C1C1C] overflow-x-hidden">

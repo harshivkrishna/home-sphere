@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { motion } from 'framer-motion';
-import { Menu, X, Home } from 'lucide-react';
+import { Menu, X } from 'lucide-react';
 import '../styles/Navbar.css';
 
 const Navbar: React.FC = () => {
@@ -9,13 +9,23 @@ const Navbar: React.FC = () => {
   const [scrolled, setScrolled] = useState(false);
   const location = useLocation();
 
+  /* ────────────────────────────
+     1.  Detect page scroll for blur/solid bg
+  ──────────────────────────────*/
   useEffect(() => {
-    const handleScroll = () => {
-      setScrolled(window.scrollY > 50);
-    };
+    const handleScroll = () => setScrolled(window.scrollY > 50);
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
+
+  /* ────────────────────────────
+     2.  Scroll to top on every route change
+  ──────────────────────────────*/
+  useEffect(() => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+    // close the mobile menu after navigation
+    setIsOpen(false);
+  }, [location.pathname]);
 
   const navItems = [
     { name: 'Home', path: '/' },
@@ -36,12 +46,13 @@ const Navbar: React.FC = () => {
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
+          {/* logo */}
           <Link to="/" className="flex items-center space-x-2">
-            <img src="/assets/homeSphere.jpg" className='logo' alt="home sphere" />
+            <img src="/assets/homeSphere.jpg" className="logo" alt="home sphere" />
             <span className="text-xl font-bold text-[#D4AF37]">HOME SPHERE</span>
           </Link>
 
-          {/* Desktop Menu */}
+          {/* desktop nav */}
           <div className="hidden md:flex space-x-8">
             {navItems.map((item) => (
               <Link
@@ -58,7 +69,6 @@ const Navbar: React.FC = () => {
                   <motion.div
                     className="absolute bottom-0 left-0 right-0 h-0.5 bg-[#D4AF37]"
                     layoutId="activeTab"
-                    initial={false}
                     transition={{ type: 'spring', stiffness: 500, damping: 30 }}
                   />
                 )}
@@ -66,17 +76,14 @@ const Navbar: React.FC = () => {
             ))}
           </div>
 
-          {/* Mobile Menu Button */}
-          <button
-            className="md:hidden text-white"
-            onClick={() => setIsOpen(!isOpen)}
-          >
+          {/* hamburger */}
+          <button className="md:hidden text-white" onClick={() => setIsOpen(!isOpen)}>
             {isOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
           </button>
         </div>
       </div>
 
-      {/* Mobile Menu */}
+      {/* mobile nav */}
       <motion.div
         className={`md:hidden ${isOpen ? 'block' : 'hidden'}`}
         initial={{ opacity: 0, height: 0 }}
@@ -93,7 +100,6 @@ const Navbar: React.FC = () => {
                   ? 'text-[#D4AF37]'
                   : 'text-white hover:text-[#D4AF37]'
               }`}
-              onClick={() => setIsOpen(false)}
             >
               {item.name}
             </Link>
