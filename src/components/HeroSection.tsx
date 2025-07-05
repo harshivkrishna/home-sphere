@@ -71,7 +71,7 @@ const HeroSection: React.FC<HeroSectionProps> = ({ onStartProject }) => {
             </motion.button>
 
             <motion.button
-            onClick={() => (window.location.href = '/project')}
+            onClick={() => (window.location.href = '/projects')}
               className="border-2 border-[#D4AF37] text-[#D4AF37] px-6 sm:px-8 py-3 sm:py-4 rounded-lg font-semibold text-base sm:text-lg hover:bg-[#D4AF37] hover:text-black transition-all duration-300 w-full sm:w-auto justify-center"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
