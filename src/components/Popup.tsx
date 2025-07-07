@@ -23,6 +23,8 @@ const initialReq: Requirements = {
   crockery: 1,
 };
 
+
+
 interface Props {
   open: boolean;
   onClose: () => void;
@@ -35,6 +37,8 @@ const Popup: React.FC<Props> = ({ open, onClose }) => {
   const [req,       setReq]               = useState<Requirements>(initialReq);
   const [name,      setName]              = useState('');
   const [mobile,    setMobile]            = useState('');
+
+  
 
   /* ─── Lock / unlock scroll ─── */
   useEffect(() => {
@@ -53,28 +57,48 @@ const Popup: React.FC<Props> = ({ open, onClose }) => {
     (step === 1 && (!floorplan || !purpose)) ||
     (step === 3 && (!name.trim() || mobile.trim().length < 8));
 
+    const [isSubmitting, setIsSubmitting] = useState(false);
+
+    const formatRequirements = () => {
+      const parts = [];
+    
+      if (req.kitchen) parts.push("Modular Kitchen: Yes");
+    
+      if (req.wardrobe > 0) parts.push(`Wardrobes: ${req.wardrobe}`);
+      if (req.entertainment > 0) parts.push(`Entertainment Units: ${req.entertainment}`);
+      if (req.study > 0) parts.push(`Study Units: ${req.study}`);
+      if (req.crockery > 0) parts.push(`Crockery Units: ${req.crockery}`);
+    
+      return parts.join('\n');
+    };
+    
+
   const sendEmail = async () => {
+    if (isSubmitting) return;        
+    setIsSubmitting(true); 
     try {
       await emailjs.send(
-        'YOUR_SERVICE_ID',
-        'YOUR_TEMPLATE_ID',
+        'service_8a9bndk',
+        'template_n4df8s9',
         {
           name,
           mobile,
           floorplan,
           purpose,
-          requirements: JSON.stringify(req, null, 2),
+          requirements: formatRequirements(),
         },
-        'YOUR_PUBLIC_KEY'
+        'AOW1QKkjg-CxZJcYO'
       );
       toast.success('Quote requested! We’ll call you soon.');
       onClose();
     } catch {
       toast.error('Could not send. Please try again.');
     }
+    finally {
+      setIsSubmitting(false);    
+    }
   };
 
-  /* ─── UI ─── */
   return (
     <AnimatePresence>
       {open && (
@@ -239,14 +263,17 @@ const Popup: React.FC<Props> = ({ open, onClose }) => {
                   {step === 1 ? 'Proceed' : 'Next'}
                 </button>
               ) : (
-                <button onClick={sendEmail} disabled={cannotProceed}
-                  className={`px-6 py-2 rounded-md font-semibold transition ${
-                    cannotProceed
-                      ? 'bg-gray-500 text-gray-300 cursor-not-allowed'
-                      : 'bg-[#D4AF37] text-black hover:bg-[#cfa12e]'
-                  }`}>
-                  Submit
-                </button>
+                <button
+  onClick={sendEmail}
+  disabled={cannotProceed || isSubmitting}
+  className={`px-6 py-2 rounded-md font-semibold transition ${
+    cannotProceed || isSubmitting
+      ? 'bg-gray-500 text-gray-300 cursor-not-allowed'
+      : 'bg-[#D4AF37] text-black hover:bg-[#cfa12e]'
+  }`}
+>
+  {isSubmitting ? 'Sending…' : 'Submit'}
+</button>
               )}
             </footer>
           </motion.div>

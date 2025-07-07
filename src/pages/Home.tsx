@@ -352,7 +352,7 @@ const Home: React.FC = () => {
 
       <PricingSection />
 
-      <BlogSection />
+      {/* <BlogSection /> */}
 
       {/* CTA Section */}
       <section className="py-20 bg-black">

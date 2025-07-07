@@ -199,7 +199,7 @@ const About: React.FC = () => {
 
       <ProcessTimeline />
 
-      <AwardsSection />
+      {/* <AwardsSection /> */}
 
       {/* Mission Section */}
       <section className="py-20 bg-black">

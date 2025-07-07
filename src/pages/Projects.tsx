@@ -229,10 +229,7 @@ const Projects: React.FC = () => {
                     <Calendar className="h-5 w-5 text-[#D4AF37]" />
                     <span>{selectedProject.year}</span>
                   </div>
-                  <div className="flex items-center space-x-2">
-                    <MapPin className="h-5 w-5 text-[#D4AF37]" />
-                    <span>{selectedProject.location}</span>
-                  </div>
+                  
                 </div>
 
                 <p className="text-gray-300 leading-relaxed text-lg">
@@ -250,9 +247,9 @@ const Projects: React.FC = () => {
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
             {[
               { number: "500+", label: "Projects Completed" },
-              { number: "15", label: "Years of Experience" },
-              { number: "50+", label: "Awards Won" },
-              { number: "98%", label: "Client Satisfaction" }
+              { number: "7+", label: "Years of Experience" },
+              { number: "30", label: "Days Project Completed" },
+              { number: "100%", label: "Client Satisfaction" }
             ].map((stat, index) => (
               <motion.div
                 key={index}

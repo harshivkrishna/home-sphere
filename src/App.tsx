@@ -7,11 +7,20 @@ import About from './pages/About';
 import Services from './pages/Services';
 import Projects from './pages/Projects';
 import Contact from './pages/Contact';
+import { ToastContainer } from 'react-toastify';
 
 function App() {
   return (
     <Router>
+
       <div className="bg-black text-white min-h-screen">
+        <ToastContainer
+          position="top-right"
+          autoClose={4000}
+          hideProgressBar={false}
+          closeOnClick
+          theme="colored"
+        />
         <Navbar />
         <Routes>
           <Route path="/" element={<Home />} />

@@ -105,14 +105,6 @@ const PortfolioShowcase: React.FC = () => {
                     </p>
                   </motion.div>
                 </div>
-
-                <motion.button
-                  className="absolute top-4 right-4 bg-black/50 text-white p-3 rounded-full hover:bg-[#D4AF37] hover:text-black transition-colors duration-300"
-                  whileHover={{ scale: 1.1 }}
-                  whileTap={{ scale: 0.9 }}
-                >
-                  <ExternalLink className="h-6 w-6" />
-                </motion.button>
               </motion.div>
             </AnimatePresence>
           </div>
@@ -158,13 +150,6 @@ const PortfolioShowcase: React.FC = () => {
           transition={{ duration: 0.6 }}
           viewport={{ once: true }}
         >
-          <motion.button
-            className="border-2 border-[#D4AF37] text-[#D4AF37] px-8 py-4 rounded-lg font-semibold text-lg hover:bg-[#D4AF37] hover:text-black transition-all duration-300"
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
-          >
-            View Full Portfolio
-          </motion.button>
         </motion.div>
       </div>
     </section>
