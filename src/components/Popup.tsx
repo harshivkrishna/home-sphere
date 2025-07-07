@@ -130,7 +130,8 @@ const Popup: React.FC<Props> = ({ open, onClose }) => {
               {step === 1 && (
                 <>
                   <section>
-                    <h3 className="mb-2 font-medium">Your floorplan</h3>
+                    <h3 className=" font-medium">Your floorplan</h3>
+                    <p className='font-thin text-xs mb-3 text-red-600'>Required*</p>
                     <div className="grid grid-cols-2 sm:grid-cols-4 gap-2">
                       {floorplans.map(f => (
                         <button
@@ -149,7 +150,8 @@ const Popup: React.FC<Props> = ({ open, onClose }) => {
                   </section>
 
                   <section>
-                    <h3 className="mb-2 font-medium">Purpose</h3>
+                    <h3 className=" font-medium">Purpose</h3>
+                    <p className='font-thin text-xs mb-3 text-red-600'>Required*</p>
                     <div className="grid grid-cols-3 gap-2">
                       {purposes.map(p => (
                         <button
@@ -222,6 +224,7 @@ const Popup: React.FC<Props> = ({ open, onClose }) => {
 
               {step === 3 && (
                 <form onSubmit={e => { e.preventDefault(); sendEmail(); }} className="space-y-4">
+                <div>
                   <input
                     type="text"
                     placeholder="Your Name"
@@ -230,6 +233,12 @@ const Popup: React.FC<Props> = ({ open, onClose }) => {
                     className="w-full bg-transparent border-b border-[#D4AF37] py-2 placeholder-gray-400 focus:outline-none"
                     required
                   />
+                  {name.trim() === '' && (
+                    <p className="text-red-500 text-xs mt-1">This field is required.</p>
+                  )}
+                </div>
+              
+                <div>
                   <input
                     type="tel"
                     placeholder="Mobile Number"
@@ -238,10 +247,16 @@ const Popup: React.FC<Props> = ({ open, onClose }) => {
                     className="w-full bg-transparent border-b border-[#D4AF37] py-2 placeholder-gray-400 focus:outline-none"
                     required
                   />
-                  <p className="text-xs text-gray-500">
-                    We’ll contact you only about this quote.
-                  </p>
-                </form>
+                  {mobile.trim() === '' && (
+                    <p className="text-red-500 text-xs mt-1">This field is required.</p>
+                  )}
+                </div>
+              
+                <p className="text-xs text-gray-500">
+                  We’ll contact you only about this quote.
+                </p>
+              </form>
+              
               )}
             </div>
 

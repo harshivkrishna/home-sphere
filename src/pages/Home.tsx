@@ -112,106 +112,95 @@ const stats = [
 
 const POPUP_KEY = 'homeQuotePopupSeen';
 
-
 const Home: React.FC = () => {
-  const [showPopup, setShowPopup] = useState(() => {
-    return !sessionStorage.getItem(POPUP_KEY);
-  });
+  const [showPopup, setShowPopup] = useState(false);
+
+
+  useEffect(() => {
+    if (sessionStorage.getItem(POPUP_KEY)) return;
+    const timer = setTimeout(() => setShowPopup(true), 5000);
+    return () => clearTimeout(timer);
+  }, []);
 
   const openQuote = () => setShowPopup(true);
-
-  /* close + remember */
-  const closeQuote = () => {
-    setShowPopup(false);
-    sessionStorage.setItem(POPUP_KEY, 'true'); // keep “seen” flag
-  };
-
-  /*  show automatically after 5 s (optional)  */
-  useEffect(() => {
-    if (!showPopup) return;
-    const t = setTimeout(() => setShowPopup(true), 5000);
-    return () => clearTimeout(t);
-  }, [showPopup]);
-
   const handleClose = () => {
     setShowPopup(false);
     sessionStorage.setItem(POPUP_KEY, 'true');
   };
-
   return (
     <div>
-      <Popup open={showPopup} onClose={handleClose}/>
+      <Popup open={showPopup} onClose={handleClose} />
       <HeroSection onStartProject={openQuote} />
-      
+
       <section className="py-20 bg-[#1C1C1C] overflow-x-hidden">
-  <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-    <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-      <motion.div
-        initial={{ opacity: 0, x: -50 }}
-        whileInView={{ opacity: 1, x: 0 }}
-        transition={{ duration: 0.8 }}
-        viewport={{ once: true }}
-      >
-        <h2 className="text-4xl md:text-5xl font-bold mb-6">
-          Creating <span className="text-[#D4AF37]">Exceptional</span> Spaces
-        </h2>
-        <p className="text-xl text-gray-300 mb-8 leading-relaxed">
-          With over 7+ years of experience in luxury interior design, we specialize in creating 
-          spaces that perfectly balance aesthetics, functionality, and your personal style. 
-          Every project is a unique journey of transformation.
-        </p>
-        <div className="space-y-4 mb-8">
-          {[
-            "Award-winning design team",
-            "Personalized design approach",
-            "Premium quality materials",
-            "Timely project completion"
-          ].map((item, index) => (
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <motion.div
-              key={index}
-              className="flex items-center space-x-3"
-              initial={{ opacity: 0, x: -20 }}
+              initial={{ opacity: 0, x: -50 }}
               whileInView={{ opacity: 1, x: 0 }}
-              transition={{ delay: index * 0.1, duration: 0.5 }}
+              transition={{ duration: 0.8 }}
               viewport={{ once: true }}
             >
-              <CheckCircle className="h-6 w-6 text-[#D4AF37]" />
-              <span className="text-gray-300">{item}</span>
+              <h2 className="text-4xl md:text-5xl font-bold mb-6">
+                Creating <span className="text-[#D4AF37]">Exceptional</span> Spaces
+              </h2>
+              <p className="text-xl text-gray-300 mb-8 leading-relaxed">
+                With over 7+ years of experience in luxury interior design, we specialize in creating
+                spaces that perfectly balance aesthetics, functionality, and your personal style.
+                Every project is a unique journey of transformation.
+              </p>
+              <div className="space-y-4 mb-8">
+                {[
+                  "Award-winning design team",
+                  "Personalized design approach",
+                  "Premium quality materials",
+                  "Timely project completion"
+                ].map((item, index) => (
+                  <motion.div
+                    key={index}
+                    className="flex items-center space-x-3"
+                    initial={{ opacity: 0, x: -20 }}
+                    whileInView={{ opacity: 1, x: 0 }}
+                    transition={{ delay: index * 0.1, duration: 0.5 }}
+                    viewport={{ once: true }}
+                  >
+                    <CheckCircle className="h-6 w-6 text-[#D4AF37]" />
+                    <span className="text-gray-300">{item}</span>
+                  </motion.div>
+                ))}
+              </div>
+              <motion.button
+                className="bg-[#D4AF37] text-black px-8 py-4 rounded-lg font-semibold text-lg flex items-center space-x-2 hover:bg-[#B8941F] transition-colors duration-300"
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+                onClick={() => { window.location.href = '/about' }}
+              >
+                <span>Learn More About Us</span>
+                <ArrowRight className="h-5 w-5" />
+              </motion.button>
             </motion.div>
-          ))}
-        </div>
-        <motion.button
-          className="bg-[#D4AF37] text-black px-8 py-4 rounded-lg font-semibold text-lg flex items-center space-x-2 hover:bg-[#B8941F] transition-colors duration-300"
-          whileHover={{ scale: 1.05 }}
-          whileTap={{ scale: 0.95 }}
-          onClick={()=>{window.location.href='/about'}}
-        >
-          <span>Learn More About Us</span>
-          <ArrowRight className="h-5 w-5" />
-        </motion.button>
-      </motion.div>
 
-      <motion.div
-        className="relative"
-        initial={{ opacity: 0, x: 50 }}
-        whileInView={{ opacity: 1, x: 0 }}
-        transition={{ duration: 0.8 }}
-        viewport={{ once: true }}
-      >
-        <img
-          src="https://images.pexels.com/photos/1571468/pexels-photo-1571468.jpeg?auto=compress&cs=tinysrgb&w=800&h=600&fit=crop"
-          alt="Luxury Interior"
-          className="rounded-2xl shadow-2xl"
-        />
-        <div className="absolute -bottom-6 -left-6 bg-[#D4AF37] text-black p-6 rounded-xl">
-          <Wrench className="h-8 w-8 mb-2" />
-          <div className="text-sm font-semibold">Flat 10 Year</div>
-          <div className="text-xs">Warranty Coverage</div>
+            <motion.div
+              className="relative"
+              initial={{ opacity: 0, x: 50 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.8 }}
+              viewport={{ once: true }}
+            >
+              <img
+                src="https://images.pexels.com/photos/1571468/pexels-photo-1571468.jpeg?auto=compress&cs=tinysrgb&w=800&h=600&fit=crop"
+                alt="Luxury Interior"
+                className="rounded-2xl shadow-2xl"
+              />
+              <div className="absolute -bottom-6 -left-6 bg-[#D4AF37] text-black p-6 rounded-xl">
+                <Wrench className="h-8 w-8 mb-2" />
+                <div className="text-sm font-semibold">Flat 10 Year</div>
+                <div className="text-xs">Warranty Coverage</div>
+              </div>
+            </motion.div>
+          </div>
         </div>
-      </motion.div>
-    </div>
-  </div>
-</section>
+      </section>
 
 
       {/* Stats Section */}
@@ -257,7 +246,7 @@ const Home: React.FC = () => {
               Our <span className="text-[#D4AF37]">Services</span>
             </h2>
             <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-              From concept to completion, we offer comprehensive interior design solutions 
+              From concept to completion, we offer comprehensive interior design solutions
               that transform your vision into reality.
             </p>
           </motion.div>
@@ -340,7 +329,7 @@ const Home: React.FC = () => {
               className="border-2 border-[#D4AF37] text-[#D4AF37] px-8 py-4 rounded-lg font-semibold text-lg hover:bg-[#D4AF37] hover:text-black transition-all duration-300"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
-              onClick={()=>{window.location.href='/projects'}}
+              onClick={() => { window.location.href = '/projects' }}
             >
               View All Projects
             </motion.button>
@@ -367,14 +356,14 @@ const Home: React.FC = () => {
               Ready to Transform <span className="text-[#D4AF37]">Your Space?</span>
             </h2>
             <p className="text-xl text-gray-300 mb-8 max-w-2xl mx-auto">
-              Let's bring your vision to life. Contact us today for a consultation and discover 
+              Let's bring your vision to life. Contact us today for a consultation and discover
               how we can create the perfect space for you.
             </p>
             <motion.button
               className="bg-[#D4AF37] text-black px-12 py-6 rounded-lg font-bold text-xl hover:bg-[#B8941F] transition-colors duration-300"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
-              onClick={()=>{window.location.href='/contact'}}
+              onClick={() => { window.location.href = '/contact' }}
 
             >
               Get Started Today
