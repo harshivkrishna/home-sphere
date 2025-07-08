@@ -204,7 +204,7 @@ const Home: React.FC = () => {
 
 
       {/* Stats Section */}
-      <section className="py-20 bg-black">
+      <section className="py-20 bg-black overflow-x-hidden">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
             {stats.map((stat, index) => (
@@ -233,7 +233,7 @@ const Home: React.FC = () => {
       </section>
 
       {/* Services Section */}
-      <section className="py-20 bg-black">
+      <section className="py-20 bg-black overflow-x-hidden">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             className="text-center mb-16"
@@ -260,7 +260,7 @@ const Home: React.FC = () => {
       </section>
 
       {/* Featured Projects */}
-      <section className="py-20 bg-[#1C1C1C]">
+      <section className="py-20 bg-[#1C1C1C] overflow-x-hidden">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             className="text-center mb-16"
@@ -344,7 +344,7 @@ const Home: React.FC = () => {
       {/* <BlogSection /> */}
 
       {/* CTA Section */}
-      <section className="py-20 bg-black">
+      <section className="py-20 bg-black overflow-x-hidden">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
