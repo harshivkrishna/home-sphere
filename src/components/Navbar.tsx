@@ -55,9 +55,9 @@ const Navbar: React.FC = () => {
           {/* desktop nav */}
           <div className="hidden md:flex space-x-8">
             {navItems.map((item) => (
-              <Link
+              <a
                 key={item.name}
-                to={item.path}
+                href={item.path}
                 className={`relative px-3 py-2 text-sm font-medium transition-colors duration-200 ${
                   location.pathname === item.path
                     ? 'text-[#D4AF37]'
@@ -72,7 +72,7 @@ const Navbar: React.FC = () => {
                     transition={{ type: 'spring', stiffness: 500, damping: 30 }}
                   />
                 )}
-              </Link>
+              </a>
             ))}
           </div>
 
@@ -92,9 +92,9 @@ const Navbar: React.FC = () => {
       >
         <div className="px-2 pt-2 pb-3 space-y-1 bg-black/95 backdrop-blur-sm">
           {navItems.map((item) => (
-            <Link
+            <a
               key={item.name}
-              to={item.path}
+              href={item.path}
               className={`block px-3 py-2 text-base font-medium transition-colors duration-200 ${
                 location.pathname === item.path
                   ? 'text-[#D4AF37]'
@@ -102,7 +102,7 @@ const Navbar: React.FC = () => {
               }`}
             >
               {item.name}
-            </Link>
+            </a>
           ))}
         </div>
       </motion.div>
